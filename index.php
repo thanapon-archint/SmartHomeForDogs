@@ -78,7 +78,42 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">GOOGLE MAP WILL BE HERE</h1>
+    <h1 class="w3-margin w3-xlarge">
+      <!-- Google Map -->
+          <div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
+
+          <!-- Footer -->
+          <footer class="w3-center w3-black w3-padding-16">
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+          </footer>
+
+          <!-- Add Google Maps -->
+          <script>
+          function myMap()
+          {
+            myCenter=new google.maps.LatLng(41.878114, -87.629798);
+            var mapOptions= {
+              center:myCenter,
+              zoom:12, scrollwheel: false, draggable: false,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+            var marker = new google.maps.Marker({
+              position: myCenter,
+            });
+            marker.setMap(map);
+          }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgVlJ_NecM0OUGWlenJcQRmYJpyb4i5vU&callback=myMap"></script>
+          <!--
+          To use this code on your website, get a free API key from Google.
+          Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+          -->
+
+
+      
+    </h1>
 </div>
 
 <!-- Footer -->
