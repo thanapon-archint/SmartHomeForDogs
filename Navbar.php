@@ -1,3 +1,9 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
@@ -5,7 +11,7 @@
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Dogs</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">DOG LIST</a>
+    <a href="dog_list.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">DOG LIST</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Search</a>
   </div>
 
@@ -13,7 +19,7 @@
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Dogs</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>
+    <a href="dog_list.php" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Search</a>
   </div>
 </div>
