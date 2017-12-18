@@ -28,7 +28,7 @@
         });
 
         infoWindow = new google.maps.InfoWindow;
-
+        
         // HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
