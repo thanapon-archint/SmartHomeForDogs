@@ -15,7 +15,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <body>
 
 <?php
-require_once('Nevbar.php');
+require_once('Navbar.php');
 ?>
 
 <!-- Header -->

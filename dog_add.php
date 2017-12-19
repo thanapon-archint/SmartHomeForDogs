@@ -12,7 +12,7 @@
 <br>
 <br>
 <div class="container">
-  <form action="/action_page.php">
+  <form action="/action_page.php" method="POST" enctype="multipart/form-data">
     <div class="row">
       <div class="col-25">
         <label for="fname">Dog Name</label>
@@ -23,10 +23,10 @@
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="lname">Last Name</label>
+        <label for="lname">Dog information</label>
       </div>
       <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <input type="text" id="lname" name="lastname" placeholder="Dog information..">
       </div>
     </div>
     <div class="row">
@@ -35,9 +35,10 @@
       </div>
       <div class="col-75">
         <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+
+          <option value="Labrador Retriever">Labrador Retriever</option>
+          <option value="German Shepherd">German Shepherd</option>
+          <option value="Golden Retriever">Golden Retriever</option>
         </select>
       </div>
     </div>
@@ -50,49 +51,35 @@
       </div>
     </div>
     <div class="row">
-      <input type="submit" value="Save">
+      <div class="col-25">
+        <label for="lname">Add location</label>
+      </div>
+      <div class="col-75">
+       
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Select image :</label>
+      </div>
+      <div class="col-75">
+
+          <input type="file" name="file" accept="image/*" onchange="picChange(event)"/>
+      </div>
+    </div>
+    <div class="row">
+      <br>
+      <input type="submit" value="ADD">
     </div>
   </form>
 </div>
-
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">
-      <!-- Google Map -->
-          <div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
-
-          <!-- Footer -->
-          <footer class="w3-center w3-black w3-padding-16">
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-          </footer>
-
-          <!-- Add Google Maps -->
-          <script>
-          function myMap()
-          {
-            myCenter=new google.maps.LatLng(41.878114, -87.629798);
-            var mapOptions= {
-              center:myCenter,
-              zoom:12, scrollwheel: true, draggable: true,
-              mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-            var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-            var marker = new google.maps.Marker({
-              position: myCenter,
-            });
-            marker.setMap(map);
-          }
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgVlJ_NecM0OUGWlenJcQRmYJpyb4i5vU&callback=myMap"></script>
-          <!--
-          To use this code on your website, get a free API key from Google.
-          Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-          -->
-
-
-      
-    </h1>
+<br>
 </div>
+
+ <button onclick="getLocation()">Current Location</button>
+        <p id="demo"></p>
+
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
@@ -108,14 +95,20 @@
 </footer>
 
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
     } else { 
-        x.className = x.className.replace(" w3-show", "");
+        x.innerHTML = "Geolocation is not supported by this browser.";
     }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
 }
 </script>
 
