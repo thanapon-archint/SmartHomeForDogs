@@ -7,10 +7,12 @@
 <body>
 
 <?php
-  require_once('Navbar.php');
+require_once('Navbar.php');
 ?>
 <br>
 <br>
+
+
 <div class="container">
   <form action="/action_page.php" method="POST" enctype="multipart/form-data">
     <div class="row">
@@ -75,7 +77,7 @@
   </form>
 </div>
 <br>
-
+</div>
 
  <button onclick="getLocation()">Current Location</button>
         <p id="demo"></p>
@@ -123,4 +125,5 @@ function showPosition(position) {
 </body>
 </html>
 
-
+</body>
+</html>
