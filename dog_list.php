@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -15,6 +16,19 @@ img {
     max-width: 100%;
     height: auto;
 }
+.button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 </style>
 <body>
 
@@ -26,6 +40,14 @@ require_once('Navbar.php');
 <br>
 <h1 class="w3-center w3-margin w3-jumbo">SMART HOME FOR DOGS</h1>
 <h1 class="w3-margin w3-center">Dogs List</h1>
+
+<div class="w3-row-padding w3-padding-64 w3-center">
+  <div class="w3-center">
+    
+    <button class="w3-button w3-red w3-round-xlarge w3-padding-large" onclick="javascript:location.href='dog_add.php'">Add a new Dog</button>
+  </div>
+</div>
+
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
@@ -34,7 +56,9 @@ require_once('Navbar.php');
       <h5 class="w3-padding-32">Dog Information</h5>
 
       <p class="w3-text-grey">Dogs Detail + Adress</p>
-      <button type="button" onclick="javascript:location.href='dog_edit.php'" >Edit!</button>
+      <button class="button" onclick="javascript:location.href='dog_edit.php'" >Edit!</button>
+      <button class="button" onclick="javascript:location.href='dog_edit.php'" >Delete!</button>
+      
     </div>
 
     <div class="w3-third w3-center">
@@ -49,20 +73,21 @@ require_once('Navbar.php');
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="w3-padding-64 w3-text-red w3-margin-right">
-        <img src="images/dog.png"  width="200" height="200">
-      </i>
-    </div>
-
     <div class="w3-twothird">
       <h1>Dog 2</h1>
       <h5 class="w3-padding-32">Dog Information</h5>
 
       <p class="w3-text-grey">Dogs Detail + Adress</p>
-      <button type="button" onclick="javascript:location.href='dog_edit.php'" >Edit!</button>
+      <button class="button" onclick="javascript:location.href='dog_edit.php'" >Edit!</button>
+      <button class="button" onclick="javascript:location.href='dog_edit.php'" >Delete!</button>
+
     </div>
   </div>
+      <div class="w3-third w3-center">
+      <i class="w3-padding-64 w3-text-red w3-margin-right">
+        <img src="images/dog.png"  width="200" height="200">
+      </i>
+    </div>
 </div>
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">

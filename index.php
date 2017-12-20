@@ -20,6 +20,7 @@ h5{
 <?php
 require_once('Navbar.php');
 ?>
+
 <!-- Header -->
 <header class="w3-container w3-red w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">SMART HOME FOR DOGS</h1>
@@ -65,45 +66,9 @@ require_once('Navbar.php');
     </div>
   </div>
 </div>
-
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">
-      <!-- Google Map -->
-          <div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
-
-          <!-- Footer -->
-          <footer class="w3-center w3-black w3-padding-16">
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-          </footer>
-
-          <!-- Add Google Maps -->
-          <script>
-          function myMap()
-          {
-            myCenter=new google.maps.LatLng(41.878114, -87.629798);
-            var mapOptions= {
-              center:myCenter,
-              zoom:12, scrollwheel: true, draggable: true,
-              mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-            var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-            var marker = new google.maps.Marker({
-              position: myCenter,
-            });
-            marker.setMap(map);
-          }
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgVlJ_NecM0OUGWlenJcQRmYJpyb4i5vU&callback=myMap"></script>
-          <!--
-          To use this code on your website, get a free API key from Google.
-          Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-          -->
-
-
-      
-    </h1>
-</div>
+<?php
+require_once('map.php');
+?>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
