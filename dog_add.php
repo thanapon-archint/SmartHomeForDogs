@@ -12,13 +12,13 @@
 <br>
 <br>
 <div class="container">
-  <form action="/action_page.php" method="POST" enctype="multipart/form-data">
+  <form action="php-action/add-dogs.php" method="POST" enctype="multipart/form-data">
     <div class="row">
       <div class="col-25">
         <label for="fname">Dog Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Dog name..">
+        <input type="text" id="fname" name="dogname" placeholder="Dog name.." required>
       </div>
     </div>
     <div class="row">
@@ -26,7 +26,7 @@
         <label for="lname">Dog information</label>
       </div>
       <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Dog information..">
+        <input type="text" id="lname" name="doginfo" placeholder="Dog information.." required>
       </div>
     </div>
     <div class="row">
@@ -34,20 +34,20 @@
         <label for="country">Dog Type</label>
       </div>
       <div class="col-75">
-        <select id="country" name="country">
+        <select id="country" name="dogtype">
 
-          <option value="Labrador Retriever">Labrador Retriever</option>
-          <option value="German Shepherd">German Shepherd</option>
-          <option value="Golden Retriever">Golden Retriever</option>
+          <option value="Retriever">Labrador Retriever</option>
+          <option value="German">German Shepherd</option>
+          <option value="Golden">Golden Retriever</option>
         </select>
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="subject">Dogs Detail + Adress</label>
+        <label for="subject">Adress</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="subject" name="adress" placeholder="Write something.." style="height:200px" required></textarea>
       </div>
     </div>
     <div class="row">
@@ -70,7 +70,7 @@
     </div>
     <div class="row">
       <br>
-      <input type="submit" value="ADD">
+      <input type="submit" name="submit" value="ADD">
     </div>
   </form>
 </div>
