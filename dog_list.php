@@ -34,7 +34,7 @@ img {
 
 <?php
 require_once('Navbar.php');
-require_once('dbconfig');
+require_once('dbconfig.php');
 
 $query = "SELECT * FROM dogs";
 $result = mysqli_query($connect, $query);
@@ -52,16 +52,24 @@ $result = mysqli_query($connect, $query);
   </div>
 </div>
 <?php
+$i=0;
  while ($row = mysqli_fetch_array($result)){
-  ?>
+ if ($i%2==0) {?>
+  <div class="w3-row-padding w3-padding-64 w3-container">
+<?php
+}
+else {?>
+   <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<?php
+}
+?>
   <div class="w3-content">
     <div class="w3-twothird">
       <h1><?php echo $row["dog_name"]; ?></h1>
       <h5 class="w3-padding-32"><?php echo $row["dog_info"]; ?></h5>
 
-      <p class="w3-text-grey"><?php echo $row["dog_name"]; ?</p>
+      <p class="w3-text-grey"><?php echo $row["dog_name"]; ?></p>
       <button class="button" onclick="javascript:location.href='dog_edit.php'" >Edit!</button>
       <button class="button" onclick="javascript:location.href='dog_edit.php'" >Delete!</button>
       
@@ -76,27 +84,10 @@ $result = mysqli_query($connect, $query);
   </div>
 </div>
 <?php
+$i++;
 }
 ?>
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Dog 2</h1>
-      <h5 class="w3-padding-32">Dog Information</h5>
 
-      <p class="w3-text-grey">Dogs Detail + Adress</p>
-      <button class="button" onclick="javascript:location.href='dog_edit.php'" >Edit!</button>
-      <button class="button" onclick="javascript:location.href='dog_edit.php'" >Delete!</button>
-
-    </div>
-  </div>
-      <div class="w3-third w3-center">
-      <i class="w3-padding-64 w3-text-red w3-margin-right">
-        <img src="images/dog.png"  width="200" height="200">
-      </i>
-    </div>
-</div>
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
     <h1 class="w3-margin w3-xlarge">
