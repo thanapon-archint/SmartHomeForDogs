@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="vendor/dog_edit.css">
+
 <head>
 
 </head>
@@ -12,75 +12,20 @@ require_once('Navbar.php');
 <br>
 <br>
 
-
-<div class="container">
-  <form action="/action_page.php" method="POST" enctype="multipart/form-data">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">Dog Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Dog name..">
-      </div>
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Let's help the dogs</h1>
+  <p class="w3-xlarge">olo</p>
+  <div class="row">
+    <div class="col-75">
+      <form action="/action_page.php" method="POST" enctype="multipart/form-data">
+        <input class="button w3-black w3-padding-large w3-large w3-margin-top"  type="file" name="file"  accept="image/*" onchange="picChange(event)"/>
+      </form>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Dog information</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Dog information..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Dog Type</label>
-      </div>
-      <div class="col-75">
-        <select id="country" name="country">
-
-          <option value="Labrador Retriever">Labrador Retriever</option>
-          <option value="German Shepherd">German Shepherd</option>
-          <option value="Golden Retriever">Golden Retriever</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Dogs Detail + Adress</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Add location</label>
-      </div>
-      <div class="col-75">
-       
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Select image :</label>
-      </div>
-      <div class="col-75">
-
-          <input type="file" name="file" accept="image/*" onchange="picChange(event)"/>
-      </div>
-    </div>
-    <div class="row">
-      <br>
-      <input type="submit" value="ADD">
-    </div>
-  </form>
-</div>
-<br>
-</div>
-
- <button onclick="getLocation()">Current Location</button>
-        <p id="demo"></p>
+      
+  </div>
+   
+  
+</header>
 
 
 <!-- Footer -->
@@ -106,24 +51,7 @@ function myFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-var x = document.getElementById("demo");
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
 </script>
-
-</body>
-</html>
-
 </body>
 </html>
