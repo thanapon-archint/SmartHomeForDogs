@@ -1,130 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+  <form action="/action_page.php">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+       &nbsp;&nbsp;  
+
 <style>
-.wrapper::after {
-    clear: both;
-}
-.wrapper::before, .wrapper::after {
-    content: " ";
-    display: table;
-}
-*::after, *::before {
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
-.dark-header {
-    background: #f2f0f1 none repeat scroll 0 0;
-}
-.wrapper {
-    min-height: 100%;
-    overflow: hidden;
-    position: relative;
-}
 
-a, a:hover {text-decoration: none;color: #E2615C;
-    transition: all 0.2s ease-in-out 0s;
-    -webkit-transition: all 0.2s ease-in-out 0s;
-}
-input,
+/* Set a style for all buttons */
 button {
-    transition: all 0.2s ease-in-out 0s;
-    -webkit-transition: all 0.2s ease-in-out 0s;
-}
-.btn-grps .pink-btn:hover {
-    background: #fff none repeat scroll 0 0 !important;
-    color: #303030 !important;
-}
-.btn-grps {
-    margin-right: 15px;
-    margin-top: 19px;
-}
-.pink-btn {
-    background: #e2615c none repeat scroll 0 0;
-    border: medium none;
-    border-radius: 2px;
-    box-shadow: 0 2px 0 #b2534f;
-    color: #fff;
-    font-size: 18px;
-    height: 48px;
-    padding: 0 35px;
-}
-.btn-grps .dark-btn {
-    background: #565656 none repeat scroll 0 0;
-    box-shadow: 0 2px 0 #4b4b4b;
-}
-.btn-grps .pink-btn {
-    display: inline-block;
-    height: 51px;
-    line-height: 51px;
-    margin-left: 17px;
-}
-.logo {
-    float: left;
-    font-size: 25px;
-    font-weight: 600;
-    margin-left: 15px;
-    margin-top: 24px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
 
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {float:left;width:50%}
 
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
 
-/* Login Page */
-.dark-header {background: #f2f0f1;}
-.dark-header header{background: #303030; position: absolute; width: 100%;   }
-.btn-grps .pink-btn {height: 51px;display: inline-block;line-height: 51px;margin-left: 17px;}
-.btn-grps .pink-btn:hover{background: #fff !important; color: #303030 !important;}
-.btn-grps .dark-btn{background: #565656; box-shadow:0 2px 0 #4b4b4b; }
-.btn-grps {margin-top: 13px;margin-right: 15px;}
-.login-middle {vertical-align: middle;display: table-cell;height: 100vh;}
-.login-details label {width: 100%;margin-bottom: 20px;}
-input:focus, input:hover{outline: none;}
-.login-details input[type="text"], .login-details input[type="password"] {width: 100%;padding-left: 10px;background: #f4f4f4;height: 40px;border: 1px solid #d5d5d5;border-radius: 5px;font-weight: 600;}
-.login-details h2 {font-size: 25px;margin: 0;padding-bottom: 30px;}
-.login-details span {margin-left: 15px;vertical-align: top;font-weight: 400;font-size: 14px;}
-.btn-sub span a, .btn-sub span a:hover{color: #000; font-size: 15px;}
-.btn-sub button {border-bottom: 2px solid #b2534f;box-shadow: none;border-radius: 3px; width: 145px;}
-.btn-sub button:hover{background:#b2534f; border-radius: 3px; box-shadow: none;}
-.login-details {max-width: 666px;margin: 0 auto;background: #fff;padding: 35px;border-radius: 7px; box-shadow: 0 0 7px rgba(0,0,0,0.1);}
-.login-inner {height: 100%;display: table;width: 100%;}
-.btn-sub span{margin-left: 25px;}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
 
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
 
- @media (max-width:767px) {
-/*KK*/
-.login-middle {display: block;height: auto;padding: 15px;}
-.dark-header header {position: relative;}
-.btn-grps .pink-btn {height: 35px;display: inline-block;line-height: 35px;margin-left: 15px;max-width: 200px;display: block;text-align: center;margin:0px auto 13px}
-.btn-grps {float: left !Important;width: 100%;}
-.btn-sub span {text-align: left;display: block;margin-left: 0;margin-top: 15px;}
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
 }
 </style>
 
 
-  </header>
-  <section class="login-inner">
-    <div class="login-middle">
-      <div class="login-details">
-        <form>
-          <h2>Log In</h2>
-          <label>
-            <input type="text" placeholder="Email address"/>
-          </label>
-         
-          <label>
-            <input type="password" placeholder="Password"/>
-          </label>
-          <label>
-            <input type="checkbox"/><span>Remember me</span>
-          </label>
-          <div class="btn-sub">
-            <button class="pink-btn">Log In</button>
-            <span>
-              <a href="register.php">Register</a>
-            </span>
-          </div>
 
-        </form>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="checkbox" checked="checked"> Remember me
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>
-  </section>
-
+  </form>
 </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+</body>
+</html>
