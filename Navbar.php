@@ -30,5 +30,6 @@
     <a href="dog_list.php" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>
 
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Search</a>
+    <a href="login-form.php" class="w3-bar-item w3-button w3-padding-large">Login</a>
   </div>
 </div>

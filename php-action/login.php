@@ -2,13 +2,13 @@
 session_start();
 include_once '../dbconfig.php';
 
-$email = $_POST['email'];
+$username = $_POST['username'];
 $pass = $_POST['password'];
 
-$query = "SELECT * FROM customer WHERE email = '$email' and password = '$pass'";
+$query = "SELECT * FROM user WHERE username = '$username' and password = '$pass'";
 $result = mysqli_query($connect, $query);
 $row = mysqli_fetch_array($result);
-if (mysqli_num_rows($result) > 0 && $row['isapproved']=='1') {
+if (mysqli_num_rows($result)) {
     
     $_SESSION["cu_id"] = $row['cu_id'];
     $_SESSION["name"] = $row['name'];
