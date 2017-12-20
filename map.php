@@ -68,15 +68,19 @@
             position: {lat:14.2123158585, lng:101.23579999999},
             map: map,
             icon:homeicons
+            url: "dog_list.php"
             });
             marker.addListener('click', function() {
             // linked to info view of the dog.
+
             map.setZoom(8);//Remove this if the link had been added.
             });
-            hmarker.addListener('click', function() {
+            google.maps.event.addListener(hmarker, 'click', function() {
+            window.location.href = this.url; {
+
             // linked to info view of the shelter.
             map.setZoom(6);//Remove this if the link had been added.
-            });
+            };
 
               //pin marker 
       //       setMarkers(map);
