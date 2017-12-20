@@ -9,17 +9,12 @@
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-<<<<<<< HEAD
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="login-form.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Dogs</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">DOG LIST</a>
-=======
+
+
     <a href="index.php" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     
-
     <a href="dog_list.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">DOG LIST</a>
->>>>>>> b6b18c03dcd75e63d231c3d80bd965de5c406926
+
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Search</a>
 
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white glyphicon glyphicon-user w3-right">Sign up</a>    
@@ -28,15 +23,12 @@
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-<<<<<<< HEAD
+
     <a href="login-form.php" class="w3-bar-item w3-button w3-padding-large">Login</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Dogs</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>
-=======
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
+
     <a href="Camera.php" class="w3-bar-item w3-button w3-padding-large">Camera</a>
     <a href="dog_list.php" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>
->>>>>>> b6b18c03dcd75e63d231c3d80bd965de5c406926
+
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Search</a>
   </div>
 </div>
