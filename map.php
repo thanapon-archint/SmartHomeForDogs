@@ -48,15 +48,35 @@
             position: pos,
             map: map,
             });
+            // Icons for markers
             var icons = {
-			url: "https://image.ibb.co/e6zzs6/DogIcon.png", // url
-			scaledSize: new google.maps.Size(50, 50), // scaled size
-			};
-             var marker = new google.maps.Marker({
-             position: {lat:13.995858585, lng:100.825829999999},
-             map: map,
-             icon:icons
+			       url: "https://image.ibb.co/e6zzs6/DogIcon.png", // url
+			       scaledSize: new google.maps.Size(50, 50), // scaled size
+			     };
+           var homeicons = {
+             url: "https://image.ibb.co/jr4KAR/Home.png", // url
+             scaledSize: new google.maps.Size(50, 50), // scaled size
+           };
+            // Sample marker
+            var marker = new google.maps.Marker({
+            position: {lat:13.995858585, lng:100.825829999999},
+            map: map,
+            icon:icons
            	});
+            // Marker for Animal Shelter
+            var hmarker = new google.maps.Marker({
+            position: {lat:14.2123158585, lng:101.23579999999},
+            map: map,
+            icon:homeicons
+            });
+            marker.addListener('click', function() {
+            // linked to info view of the dog.
+            map.setZoom(8);//Remove this if the link had been added.
+            });
+            hmarker.addListener('click', function() {
+            // linked to info view of the shelter.
+            map.setZoom(6);//Remove this if the link had been added.
+            });
 
               //pin marker 
       //       setMarkers(map);
