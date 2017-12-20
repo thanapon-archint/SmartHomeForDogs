@@ -34,6 +34,10 @@ img {
 
 <?php
 require_once('Navbar.php');
+require_once('dbconfig');
+
+$query = "SELECT * FROM dogs";
+$result = mysqli_query($connect, $query);
 ?>
 
 <br>
@@ -47,15 +51,17 @@ require_once('Navbar.php');
     <button class="w3-button w3-red w3-round-xlarge w3-padding-large" onclick="javascript:location.href='dog_add.php'">Add a new Dog</button>
   </div>
 </div>
-
+<?php
+ while ($row = mysqli_fetch_array($result)){
+  ?>
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1>Dog 1</h1>
-      <h5 class="w3-padding-32">Dog Information</h5>
+      <h1><?php echo $row["dog_name"]; ?></h1>
+      <h5 class="w3-padding-32"><?php echo $row["dog_info"]; ?></h5>
 
-      <p class="w3-text-grey">Dogs Detail + Adress</p>
+      <p class="w3-text-grey"><?php echo $row["dog_name"]; ?</p>
       <button class="button" onclick="javascript:location.href='dog_edit.php'" >Edit!</button>
       <button class="button" onclick="javascript:location.href='dog_edit.php'" >Delete!</button>
       
@@ -69,7 +75,9 @@ require_once('Navbar.php');
     </div>
   </div>
 </div>
-
+<?php
+}
+?>
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
