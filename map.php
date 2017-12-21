@@ -43,11 +43,9 @@
 
             centerControlDiv.index = 1;
             map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
-          
-
             infoWindow.setPosition(pos);
-            infoWindow.setContent("You're here.");
-            infoWindow.open(map);
+            //infoWindow.setContent("You're here.");
+            //infoWindow.open(map);
             var currCenter = map.setCenter(pos);
             google.maps.event.trigger(map, 'resize');
             map.setCenter(pos);
