@@ -17,7 +17,7 @@
 
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Search</a>
 
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white glyphicon glyphicon-user w3-right">Sign up</a>    
+    
     <a href="login-form.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right-align w3-right">Login</a>   
   </div>
 

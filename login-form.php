@@ -10,18 +10,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
 <body>
+<?php
+require_once('dbconfig.php');
 
+if (isset($_POST['Register'])) {
+    $username = $_POST['username'];
+    $password = $_POST['psw'];
 
+    $query = "INSERT INTO user (username, password) VALUES('$username', '$password')";
+    $connect->query($query);
+//    if ($connect->query($query) === TRUE)
+//        echo "success";
+}
+?>
 <div class="container">
   <h2>Stacked form</h2>
-  <form action="/action_page.php">
+  <form action="php-action/login.php" method="POST">
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <label for="email">Username:</label>
+      <input  class="form-control" id="email" placeholder="Enter Username" name="username">
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
     </div>
     <div class="form-check">
       <label class="form-check-label">
@@ -30,7 +41,7 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
   </form>
   <br>
   <button  onclick="document.getElementById('id01').style.display='block'" >Sign Up</button>
@@ -40,22 +51,23 @@
 
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="login-form.php" method="POST">
     <div class="container">
-      <label><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+    
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
 
       <label><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      <input type="checkbox" checked="checked"> Remember me
+      
+
       <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="submit" name="Register" class="signupbtn">Sign Up</button>
       </div>
     </div>
   </form>

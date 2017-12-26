@@ -36,12 +36,16 @@ require_once('Navbar.php');
       <h5 class="w3-padding-32" >ปัจจุบันนี้ มีสุนัขที่ถูกทอดทิ้งเพิ่มขึ้นเป็นจำนวนมาก ทำให้มีสุนัขจรจัดเพิ่มขึ้นอย่างต่อเนื่อง ส่งผลให้มีจำนวนสุนัขภายในมูลนิธิช่วยเหลือสัตว์เลี้ยงมีจำนวนเพิ่มขึ้น ซึ่งจัดเป็นปัญหาเรื้อรังที่ส่งผลต่อการจัดสรรงบประมาณ การวางแนวทางการดูแลสุนัข และการเร่งทำหมันสุนัขภายในมูลนิธิ ประกอบกับหลายครัวเรือนประสบปัญหาการเลี้ยงดูสุนัข เช่น การไม่พร้อมดูแล การเคลื่อนย้ายสัตว์เลี้ยงในขณะที่กำลังย้ายที่อยู่อาศัย หรือการขาดความรับผิดชอบต่อสุนัขที่เลี้ยง 
 จึงได้มีการจัดทำเว็บไซต์เพื่อประชาสัมพันธ์ให้มีการป้องกันและแก้ไขปัญหาดังกล่าวโดยการเปิดช่องทางออนไลน์ในการหาที่อยู่อาศัยให้สุนัขและส่งเสริมให้มีการเลี้ยงสุนัขโดยไม่มีความจำเป็นต้องเกิดการซื้อขาย</h5>
 
-      <img src="Images/groupofdoggy.JPEG" width="700" height="200">
+      <!-- <img src="Images/groupofdoggy.JPEG" width="700" height="200"> -->
     </div>
 
     <div class="w3-third w3-center">
-      <i class="w3-padding-64 w3-text-red">
-        <img src="Images/doggy.jpg" width= "320" height="220" align="left">
+      <i class="w3-padding-64 w3-text-red w3-margin-left">
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="Images/doggy.jpg" width= "320" height="220" >
 
       </i>
 
@@ -53,7 +57,9 @@ require_once('Navbar.php');
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+      <i class=" w3-padding-64 w3-text-red w3-margin-right">
+       
+      </i>
     </div>
 
     <div class="w3-twothird">
