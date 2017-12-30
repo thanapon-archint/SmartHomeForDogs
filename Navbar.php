@@ -15,16 +15,14 @@
     
     <a href="dog_list.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">DOG LIST</a>
 
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Search</a>
+    <a href="request-form.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Request</a>
 
-    
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Search</a>
     <a href="login-form.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right-align w3-right">Login</a>   
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-
-    <a href="login-form.php" class="w3-bar-item w3-button w3-padding-large">Login</a>
 
     <a href="Camera.php" class="w3-bar-item w3-button w3-padding-large">Camera</a>
     <a href="dog_list.php" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>

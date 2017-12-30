@@ -12,6 +12,7 @@
 <body>
 <?php
 require_once('dbconfig.php');
+require_once('Navbar.php');
 
 if (isset($_POST['Register'])) {
     $username = $_POST['username'];
@@ -23,6 +24,8 @@ if (isset($_POST['Register'])) {
 //        echo "success";
 }
 ?>
+<br>
+<br>
 <div class="container">
   <h2>Stacked form</h2>
   <form action="php-action/login.php" method="POST">

@@ -12,6 +12,9 @@
 <br>
 <br>
 <div class="container">
+  <div class="w3-center">
+    <h3>Add a dog</h3>
+  </div>
   <form action="php-action/add-dogs.php" method="POST" enctype="multipart/form-data">
     <div class="row">
       <div class="col-25">
