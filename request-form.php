@@ -22,8 +22,8 @@
         <label for="country">Dog Type</label>
       </div>
       <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
+        <select id="country" name="dogtype">
+          <option value="Retriever">Retriever</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
@@ -32,11 +32,11 @@
 
     <div class="row">
       <div class="col-25">
-        <label for="country">Dog color</label>
+        <label for="">Dog color</label>
       </div>
       <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
+        <select id="country" name="dogcolor">
+          <option value="White">White</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
@@ -48,8 +48,8 @@
         <label for="country">Dog age</label>
       </div>
       <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
+        <select id="country" name="dogage">
+          <option value="Puppy">Puppy</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
@@ -57,24 +57,16 @@
     </div>
     <br>
     <div class="row">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" name="submit">
+
     </div>
   </form>
 </div>
 
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+<?php
+include("footer.php");
+?>
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
