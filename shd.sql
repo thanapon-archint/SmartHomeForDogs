@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2017 at 10:20 AM
+-- Generation Time: Jan 11, 2018 at 11:05 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -44,7 +44,7 @@ CREATE TABLE `dogs` (
 INSERT INTO `dogs` (`dog_id`, `dog_name`, `dog_info`, `dog_type`, `cu_id`, `dog_address`) VALUES
 (1, 'q', 'w', 'Retriever', 1, 'we'),
 (2, 'pun', 'eiei', 'doggy', 1, '123'),
-(3, 'pun', 'eiei', 'doggy', 1, '123');
+(3, 'test', 'qqq', 'Golden', 1, 'asd');
 
 -- --------------------------------------------------------
 
@@ -55,11 +55,18 @@ INSERT INTO `dogs` (`dog_id`, `dog_name`, `dog_info`, `dog_type`, `cu_id`, `dog_
 CREATE TABLE `user` (
   `cu_id` int(11) NOT NULL,
   `username` varchar(11) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(20) DEFAULT NULL,
   `password` varchar(50) NOT NULL,
-  `usertype` varchar(11) NOT NULL,
-  `name` varchar(11) NOT NULL
+  `usertype` varchar(11) NOT NULL DEFAULT 'User',
+  `name` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`cu_id`, `username`, `email`, `password`, `usertype`, `name`) VALUES
+(2, 'pon', NULL, '123', 'User', NULL);
 
 --
 -- Indexes for dumped tables
@@ -90,7 +97,7 @@ ALTER TABLE `dogs`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `cu_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `cu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
