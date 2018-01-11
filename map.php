@@ -14,7 +14,28 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+<div id="map"></div>
+<?php
+require_once('Navbar.php');
+require_once('dbconfig.php');
+
+$query = "SELECT * FROM dogs";
+$result = mysqli_query($connect, $query);
+$i=0;
+$los1 = array();
+$los2 = array();
+while ($row = mysqli_fetch_array($result)){
+  
+  array_push($los1,"$row['location_x']");
+  
+  array_push($los2,"$row['location_y']");
+}
+  print_r($los1);
+
+
+
+?>
+   
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
@@ -64,11 +85,25 @@
              scaledSize: new google.maps.Size(50, 50), // scaled size
            };
             // Sample marker
+<?php
+while ($row = mysqli_fetch_array($result)){
+
+  $lo1=$row['location_x'];
+  $lo2=$row['location_y'];
+
+?>
+            var jsvar1 = <?php echo json_encode($lo1); ?>;
+            var jsvar2 = <?php echo json_encode($lo2); ?>;
             var marker = new google.maps.Marker({
-            position: {lat:13.995858585, lng:100.825829999999},
+            
+            //position: {lat:<?=$lo1?>;, lng:<?=$lo2?>;},
+            position: {lat:jsvar1, lng:jsvar2},
             map: map,
             icon:icons
            	});
+<?php
+}
+?>
             // Marker for Animal Shelter
             var hmarker = new google.maps.Marker({
             position: {lat:14.2123158585, lng:101.23579999999},

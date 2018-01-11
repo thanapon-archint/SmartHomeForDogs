@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
 	$query = "INSERT INTO dogs (dog_name, dog_info, dog_type, cu_id, dog_address) VALUES ('$dogname', '$doginfo', '$dogtype', '$cu_id', '$adress')";
 
 	 if ($connect->query($query) === TRUE) {
-	        header("Location: ../dog_list.php?");
+	        header("Location: ../dog_add_location.php?");
 	    } else
 	        echo "Error: " . $query . "<br>" . $connect->error;
 

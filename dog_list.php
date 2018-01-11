@@ -38,6 +38,12 @@ require_once('dbconfig.php');
 
 $query = "SELECT * FROM dogs";
 $result = mysqli_query($connect, $query);
+
+if(isset($_POST['submit']))
+{
+  $lo1 = $_POST['lo1'];
+  $lo2 = $_POST['lo2'];
+  $query = "INSERT INTO dogs (lo1, lo2) VALUES ('$lo1', '$lo2')";
 ?>
 
 <br>

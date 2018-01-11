@@ -13,55 +13,31 @@
 <br>
 <div class="container">
   <div class="w3-center">
-    <h3>Add a dog</h3>
+    <h3>Add Location</h3>
   </div>
-  <form action="php-action/add-dogs.php" method="POST" enctype="multipart/form-data">
     <div class="row">
       <div class="col-25">
-        <label for="fname">Dog Name</label>
+        <label for="lname">Add location</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="dogname" placeholder="Dog name.." required>
+       
+         <button onclick="getLocation()" name="locations">Current Location</button>
+        <p id="demo"></p>
+        your location is <br>
+<?php
+  $variable1 = $_GET['lo1'];
+  $variable2 = $_GET['lo2'];
+  echo $variable1;
+?>
+<br>
+<?php
+  echo $variable2;
+?>
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Dog information</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="doginfo" placeholder="Dog information.." required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Dog Type</label>
-      </div>
-      <div class="col-75">
-        <select id="country" name="dogtype">
-
-          <option value="Retriever">Labrador Retriever</option>
-          <option value="German">German Shepherd</option>
-          <option value="Golden">Golden Retriever</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Adress</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="adress" placeholder="Write something.." style="height:200px" required></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Select image :</label>
-      </div>
-      <div class="col-75">
-
-          <input type="file" name="file" accept="image/*" onchange="picChange(event)"/>
-      </div>
-    </div>
+  <form action="dog_list.php" method="POST" enctype="multipart/form-data">  
+    <input type="hidden" name="lo1" value="<?php echo $variable1;?>" />
+    <input type="hidden" name="lo2" value="<?php echo $variable2;?>" />
     <div class="row">
       <br>
       <input type="submit" name="submit" value="ADD">
@@ -69,6 +45,8 @@
   </form>
 </div>
 <br>
+
+
 
 
 
@@ -108,8 +86,15 @@ function getLocation() {
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
+    var a="Hello";
+    window.location.href = window.location.href+'?lo1='+position.coords.latitude+'&lo2='+position.coords.longitude;
+
+
 }
+
 </script>
+
+
 
 </body>
 </html>
