@@ -77,8 +77,12 @@
             });
             marker.addListener('click', function() {
             window.location.href = "dog_detail.php"// linked to info view of the dog.
+            map.setZoom(6);//Remove this if the link had been added.
+            });
             hmarker.addListener('click', function() {
-            window.location.href = "dog_shelterdetail.php"// linked to info view of the shelter
+            window.location.href = "dogshelter_detail.php"// linked to info view of the shelter.
+            map.setZoom(6);//Remove this if the link had been added.
+            });
             function CenterControl(controlDiv, map) {
 
         // Set CSS for the control border.
