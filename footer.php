@@ -1,5 +1,5 @@
 <!-- Footer -->
-<div class="w3-container w3-padding-32 w3-black w3-opacity w3-card w3-hover-opacity-off w3-center" style="margin:32px 0;">
+<div class="w3-container w3-padding-32 w3-black  w3-center" style="margin:32px 0;">
     <h2>Get the best offers first!</h2>
     <p>Join our newsletter.</p>
     <label>QR-Code</label>
