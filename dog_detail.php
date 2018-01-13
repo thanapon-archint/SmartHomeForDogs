@@ -35,17 +35,18 @@ img {
 <?php
 require_once('Navbar.php');
 require_once('dbconfig.php');
-$d_id=/*get dog id*/
-$query = "SELECT * FROM dogs WHERE dogs_id=$d_id";
-$result = mysqli_query($connect, $query);
-$row = $result->fetch_array();
+$d_id=$_GET['dog_id'];/*get dog id*/
+
+$query = "SELECT * FROM dogs WHERE dog_id='$d_id'";
+ $result = mysqli_query($connect, $query);
+ $row = mysqli_fetch_array($result);
 
 ?>
 
 <br>
 <br>
-<h1 class="w3-margin w3-center"><?= $row['dog_name'] ?></h1>
-<h2 class="w3-margin w3-center"><?= $row['dog_type'] ?></h2>
+<h1 class="w3-margin w3-center"><?=$row['dog_name']?></h1>
+<h2 class="w3-margin w3-center"><?=$row['dog_type']?></h2>
 
 <div class="w3-row-padding w3-padding-64 w3-center">
   <div class="w3-center">

@@ -22,15 +22,6 @@ require_once('dbconfig.php');
 $query = "SELECT * FROM dogs";
 $result = mysqli_query($connect, $query);
 $i=0;
-$los1 = array();
-$los2 = array();
-while ($row = mysqli_fetch_array($result)){
-  
-  array_push($los1,"$row['location_x']");
-  
-  array_push($los2,"$row['location_y']");
-}
-  print_r($los1);
 
 
 
@@ -86,23 +77,16 @@ while ($row = mysqli_fetch_array($result)){
            };
             // Sample marker
 <?php
-while ($row = mysqli_fetch_array($result)){
 
-  $lo1=$row['location_x'];
-  $lo2=$row['location_y'];
 
-?>
-            var jsvar1 = <?php echo json_encode($lo1); ?>;
-            var jsvar2 = <?php echo json_encode($lo2); ?>;
-            var marker = new google.maps.Marker({
-            
-            //position: {lat:<?=$lo1?>;, lng:<?=$lo2?>;},
-            position: {lat:jsvar1, lng:jsvar2},
+ while($row = mysqli_fetch_array($result))
+  {  
+
+            echo 'var marker = new google.maps.Marker({position: {lat:'.$row['location_x'].', lng:'.$row['location_y'].'},
             map: map,
             icon:icons
-           	});
-<?php
-}
+           	});';
+  }
 ?>
             // Marker for Animal Shelter
             var hmarker = new google.maps.Marker({
