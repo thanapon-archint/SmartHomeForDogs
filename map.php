@@ -84,20 +84,24 @@ $i=0;
 
             echo 'var marker = new google.maps.Marker({position: {lat:'.$row['location_x'].', lng:'.$row['location_y'].'},
             map: map,
-            icon:icons
+            icon:icons,
+            url: "dog_detail.php?id='.$row['dog_id'].'"
            	});';
+
+            echo " google.maps.event.addListener(marker, 'click', function() {
+                window.location.href = this.url;
+            });";
   }
 ?>
+           
             // Marker for Animal Shelter
             var hmarker = new google.maps.Marker({
             position: {lat:14.2123158585, lng:101.23579999999},
             map: map,
             icon:homeicons
             });
-            marker.addListener('click', function() {
-            window.location.href = "dog_detail.php"// linked to info view of the dog.
-            map.setZoom(6);//Remove this if the link had been added.
-            });
+
+  
             hmarker.addListener('click', function() {
             window.location.href = "dogshelter_detail.php"// linked to info view of the shelter.
             map.setZoom(6);//Remove this if the link had been added.
