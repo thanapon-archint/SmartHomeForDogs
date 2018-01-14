@@ -2,9 +2,9 @@
 <div class="w3-container w3-padding-32 w3-red  w3-center" style="margin:32px 0;">
     <h2>Get the best offers first!</h2>
     <p>Join our newsletter.</p>
-    <label>QR-Code</label>
-    <input class="w3-input w3-border" type="text" placeholder="This will be replace with a QR-Code">
-    <button type="button" class="w3-button w3-red w3-margin-top">Subscribe</button>
+    <img src="images/QRcode.png" alt="QR-code">
+    <!-- <input class="w3-input w3-border" type="text" placeholder="This will be replace with a QR-Code"> -->
+    
   </div>
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
   <div class="w3-xlarge w3-padding-32">
