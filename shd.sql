@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2018 at 11:05 AM
+-- Generation Time: Jan 14, 2018 at 09:16 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -34,17 +34,19 @@ CREATE TABLE `dogs` (
   `dog_info` text NOT NULL,
   `dog_type` text NOT NULL,
   `cu_id` int(11) NOT NULL,
-  `dog_address` text NOT NULL
+  `dog_address` text NOT NULL,
+  `location_x` double NOT NULL,
+  `location_y` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dogs`
 --
 
-INSERT INTO `dogs` (`dog_id`, `dog_name`, `dog_info`, `dog_type`, `cu_id`, `dog_address`) VALUES
-(1, 'q', 'w', 'Retriever', 1, 'we'),
-(2, 'pun', 'eiei', 'doggy', 1, '123'),
-(3, 'test', 'qqq', 'Golden', 1, 'asd');
+INSERT INTO `dogs` (`dog_id`, `dog_name`, `dog_info`, `dog_type`, `cu_id`, `dog_address`, `location_x`, `location_y`) VALUES
+(1, 'q', 'w', 'Retriever', 1, 'we', 14.0756372, 100.6187205),
+(2, 'pun', 'eiei', 'doggy', 1, '123', 14, 99),
+(3, 'test', 'qqq', 'Golden', 1, 'asd', 15, 100);
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,7 @@ ALTER TABLE `dogs`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `cu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
+  MODIFY `cu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
