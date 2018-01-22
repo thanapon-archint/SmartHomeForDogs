@@ -11,11 +11,13 @@ if(isset($_POST['submit']))
 	$doginfo = $_POST['doginfo'];
 	$dogtype = $_POST['dogtype'];
 	$adress = $_POST['adress'];
+	$image = addslashes(file_get_contents($_FILES['images']['tmp_name']));
+	$image =  base64_encode($image);
 	echo $dogname;
 	echo $doginfo;
 	echo $dogtype;
 	echo $adress;
-	$query = "INSERT INTO dogs (dog_name, dog_info, dog_type, cu_id, dog_address) VALUES ('$dogname', '$doginfo', '$dogtype', '$cu_id', '$adress')";
+	$query = "INSERT INTO dogs (dog_name, dog_info, dog_type, cu_id, dog_address, dog_image) VALUES ('$dogname', '$doginfo', '$dogtype', '$cu_id', '$adress', '$image')";
 
 	 if ($connect->query($query) === TRUE) {
 	        header("Location: ../dog_add_location.php?");

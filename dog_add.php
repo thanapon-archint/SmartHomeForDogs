@@ -59,7 +59,8 @@
       </div>
       <div class="col-75">
 
-          <input type="file" name="file" accept="image/*" onchange="picChange(event)"/>
+         <!--  <input type="file" name="file" accept="image/*" onchange="picChange(event)"/> -->
+          <label>File: </label><input type="file" name="image" />
       </div>
     </div>
     <div class="row">

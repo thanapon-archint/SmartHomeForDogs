@@ -2,7 +2,7 @@
 <div class="w3-container w3-padding-32 w3-red  w3-center" style="margin:32px 0;">
     <h2>Get the best offers first!</h2>
     <p>Join our newsletter.</p>
-    <img src="images/QRcode.png" alt="QR-code">
+    <img src="images/new_QR.png" alt="QR-code" width="200" height="200">
     <!-- <input class="w3-input w3-border" type="text" placeholder="This will be replace with a QR-Code"> -->
     
   </div>
