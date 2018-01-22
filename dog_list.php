@@ -42,8 +42,17 @@ $result = mysqli_query($connect, $query);
 if(isset($_POST['submit']))
 {
   $lo1 = $_POST['lo1'];
+
   $lo2 = $_POST['lo2'];
-  $query = "INSERT INTO dogs (lo1, lo2) VALUES ('$lo1', '$lo2')";
+
+
+  $q = "SELECT MAX(dog_id) as a FROM dogs";
+  $result1 = mysqli_query($connect, $q);
+  $rows = mysqli_fetch_array($result1);
+  $dog_id=$rows['a'];
+  echo "<br><br><br><br><br>$dog_id";
+  $qr = "UPDATE dogs set location_x = '$lo1', location_y = '$lo2' WHERE dog_id = '$dog_id'" ;
+  $connect->query($qr);
 }
 ?>
 
@@ -84,8 +93,11 @@ else {?>
 
     <div class="w3-third w3-center">
       <i class="w3-padding-64 w3-text-red">
-        <img src="images/dog.png" width="200" height="200">
 
+        <!-- <img src="images/dog.png" width="200" height="200"> -->
+        <?php
+        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['dog_image'] ).'"/>';
+        ?>
       </i>
     </div>
   </div>

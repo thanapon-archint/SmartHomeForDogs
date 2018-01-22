@@ -23,26 +23,31 @@
        
          <button onclick="getLocation()" name="locations">Current Location</button>
         <p id="demo"></p>
-        your location is <br>
-<?php
-  $variable1 = $_GET['lo1'];
-  $variable2 = $_GET['lo2'];
-  echo $variable1;
-?>
-<br>
-<?php
-  echo $variable2;
-?>
+
       </div>
     </div>
-  <form action="dog_list.php" method="POST" enctype="multipart/form-data">  
-    <input type="hidden" name="lo1" value="<?php echo $variable1;?>" />
-    <input type="hidden" name="lo2" value="<?php echo $variable2;?>" />
+
+ <form action="dog_list.php" method="POST" >  
+<?php
+if(isset($_GET['lo1'])){
+  echo "Your locations are <br>";
+  $lo1=$_GET['lo1'];
+  $lo2=$_GET['lo2'];
+
+  echo "Latitude: $lo1<br>";
+  echo "Longitude: $lo2";
+
+?>
+    <input type="hidden" name="lo1" value="<?php echo $lo1;?>" />
+    <input type="hidden" name="lo2" value="<?php echo $lo2;?>" />
+<?php
+}
+?>
     <div class="row">
       <br>
       <input type="submit" name="submit" value="ADD">
     </div>
-  </form>
+  </form> 
 </div>
 <br>
 
@@ -51,50 +56,48 @@
 
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+<?php
+require_once('footer.php');
+?>
 
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
 var x = document.getElementById("demo");
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-    var a="Hello";
-    window.location.href = window.location.href+'?lo1='+position.coords.latitude+'&lo2='+position.coords.longitude;
+    
 
+    var variableToSend1 = position.coords.latitude;
+    var variableToSend2 = position.coords.longitude;
+     window.location.href = "dog_add_location.php?lo1=" + variableToSend1+"&lo2="+variableToSend2;
+   // $.post('dog_list.php', {variable1: variableToSend1,variable2: variableToSend2});
 
 }
 
-</script>
-
-
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+</script> 
 
 </body>
 </html>
