@@ -17,16 +17,45 @@
 
     <a href="request-form.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Request</a>
 
+<?php
+session_start();
+if(isset($_SESSION["username"])){
+?>
+<a href="php-action/logout.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right-align w3-right"><?=$_SESSION["username"]?></a>   
+  </div>
+<?php
+}
+else{
 
+?>
     <a href="login-form.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right-align w3-right">Login</a>   
   </div>
+
+  <?php
+}
+?>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
 
     <a href="Camera.php" class="w3-bar-item w3-button w3-padding-large">Camera</a>
     <a href="dog_list.php" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>
+<?php
+session_start();
+if(isset($_SESSION["username"])){
+?>
+ <a href="login-form.php" class="w3-bar-item w3-button w3-padding-large">><?=$_SESSION["username"]?></a> 
+  
+<?php
+}
+else{
 
-    <a href="login-form.php" class="w3-bar-item w3-button w3-padding-large">Login</a>
+?>
+     <a href="login-form.php" class="w3-bar-item w3-button w3-padding-large">Login</a>
+
+  <?php
+}
+?>
+   
   </div>
 </div>

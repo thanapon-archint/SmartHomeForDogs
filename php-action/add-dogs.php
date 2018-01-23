@@ -2,7 +2,7 @@
 session_start();
 include_once '../dbconfig.php';
 
-$cu_id = 1;
+$cu_id = $_SESSION['cu_id'];
 
 
 if(isset($_POST['submit']))

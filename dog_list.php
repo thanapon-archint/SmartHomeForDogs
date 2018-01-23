@@ -35,8 +35,9 @@ img {
 <?php
 require_once('Navbar.php');
 require_once('dbconfig.php');
-
-$query = "SELECT * FROM dogs";
+session_start();
+$dogid = $_SESSION['cu_id'];
+$query = "SELECT * FROM dogs WHERE cu_id = '$dogid'";
 $result = mysqli_query($connect, $query);
 
 if(isset($_POST['submit']))

@@ -11,6 +11,7 @@ $row = mysqli_fetch_array($result);
 if (mysqli_num_rows($result)) {
     
     $_SESSION["username"] = $row['username'];
+    $_SESSION["cu_id"] = $row['cu_id'];
     header('Location: ../index.php');
 } 
 else{
