@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
   $result1 = mysqli_query($connect, $q);
   $rows = mysqli_fetch_array($result1);
   $dog_id=$rows['a'];
-  echo "<br><br><br><br><br>$dog_id";
+  
   $qr = "UPDATE dogs set location_x = '$lo1', location_y = '$lo2' WHERE dog_id = '$dog_id'" ;
   $connect->query($qr);
 }

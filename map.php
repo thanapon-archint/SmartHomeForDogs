@@ -94,6 +94,9 @@ $i=0;
   }
 ?>
            
+            
+
+
             // Marker for Animal Shelter
             var hmarker = new google.maps.Marker({
             position: {lat:14.2123158585, lng:101.23579999999},
@@ -101,10 +104,35 @@ $i=0;
             icon:homeicons
             });
 
+            var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            'sandstone rock formation in the southern part of the '+
+            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+            'Aboriginal people of the area. It has many springs, waterholes, '+
+            'rock caves and ancient paintings. Uluru is listed as a World '+
+            'Heritage Site.</p>'+
+            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+            '(last visited June 22, 2009).</p>'+
+            '</div>'+
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
   
             hmarker.addListener('click', function() {
-            window.location.href = "dogshelter_detail.php"// linked to info view of the shelter.
-            map.setZoom(6);//Remove this if the link had been added.
+            /*window.location.href = "dogshelter_detail.php"// linked to info view of the shelter.*/
+            infowindow.open(map, hmarker);
+            /*map.setZoom(6);//Remove this if the link had been added.*/
             });
             function CenterControl(controlDiv, map) {
 
@@ -138,51 +166,7 @@ $i=0;
 
       }
 
-              //pin marker 
-      //       setMarkers(map);
-            
-      //       function setMarkers(map) {
-      //   // Adds markers to the map.
 
-      //   // Marker sizes are expressed as a Size of X,Y where the origin of the image
-      //   // (0,0) is located in the top left of the image.
-
-      //   // Origins, anchor positions and coordinates of the marker increase in the X
-      //   // direction to the right and in the Y direction down.
-      //   // var image = {
-      //   //   url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-      //   //   // This marker is 20 pixels wide by 32 pixels high.
-      //   //   size: new google.maps.Size(20, 32),
-      //   //   // The origin for this image is (0, 0).
-      //   //   origin: new google.maps.Point(0, 0),
-      //   //   // The anchor for this image is the base of the flagpole at (0, 32).
-      //   //   anchor: new google.maps.Point(0, 32)
-      //   // };
-      //   // Shapes define the clickable region of the icon. The type defines an HTML
-      //   // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-      //   // The final coordinate closes the poly by connecting to the first coordinate.
-      //   // var shape = {
-      //   //   coords: [1, 1, 1, 20, 18, 20, 18, 1],
-      //   //   type: 'poly'
-      //   // };
-      //   var dogslocs = [
-      //   ['1', 14.5689955, 100],
-      //   ['2', 13.995858585, 100.8258299999],
-      //   ['3', 14.798258955, 100.5868765886],
-      //   ['4', 13.5689955, 100.127452852],
-      //   ['5', 14.9741111, 101.486868868]
-      // ];
-      //   for (var i = 0; i < dogslocs.lenght; i++) {
-
-      //     var dogsloc = dogslocs[i];
-      //     var marker = new google.maps.Marker({
-      //       position: {lat:dogsloc[1], lng:dogsloc[2]},
-      //       //position: new google.maps.LatLng(dogsloc[1],dogsloc[2])
-      //       map: map,
-     
-      //     });
-       // }
-      //}
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
