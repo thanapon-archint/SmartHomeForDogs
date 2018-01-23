@@ -28,7 +28,7 @@ if (mysqli_num_rows($result) > 0){
               <p><?php echo "Details: ".$row['dog_info']?></p>
               
               <p class="w3-large"><i class="fa fa-phone"></i> </p>
-              <button class="w3-button w3-block w3-black w3-margin-bottom">Choose dog</button>
+              <button class="w3-button w3-block w3-black w3-margin-bottom" onclick="javascript:location.href='dog_detail.php?id=<?=$row['dog_id']?>'">Choose dog</button>
             </div>
         
           

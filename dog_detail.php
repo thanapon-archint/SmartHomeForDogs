@@ -81,12 +81,11 @@ $row = mysqli_fetch_array($result);
 
     <div class="w3-third w3-center">
       <i class="w3-padding-64 w3-text-red w3-margin-left">
-        <br>
-        <br>
-        <br>
-        <br>
-        <img src="Images/doggy.jpg" width= "320" height="220" >
+    
 
+        <?php
+         echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['dog_image'] ).'"/ width= "320" height="220">';
+        ?>
       </i>
 
     </div>
