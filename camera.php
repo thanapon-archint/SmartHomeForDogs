@@ -17,9 +17,20 @@ require_once('Navbar.php');
   <p class="w3-xlarge">อะไรก็ได้..</p>
   <div class="row">
     <div class="col-75">
-      <form action="/action_page.php" method="POST" enctype="multipart/form-data">
-        <input class="w3-black w3-small"  type="file" name="file" width="50"  accept="image/*" onchange="picChange(event)"  />
-        <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type="submit" value="Submit">
+      <form action="php-action/add-camera.php" method="POST" enctype="multipart/form-data">
+        
+        <label>Take a picture: </label><input class="w3-black w3-small"  type="file" name="file" width="50"  type="file" name="image" />
+
+          <div class="row">
+        <div class="col-25">
+          <label for="lname">Dog information:</label>
+
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="doginfo" placeholder="Dog information.." required>
+        </div>
+      </div>
+                <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type="submit" value="Submit" name="submit">
       </form>
     </div>
       

@@ -41,10 +41,10 @@ else{
     <a href="Camera.php" class="w3-bar-item w3-button w3-padding-large">Camera</a>
     <a href="dog_list.php" class="w3-bar-item w3-button w3-padding-large">DOG LIST</a>
 <?php
-session_start();
+
 if(isset($_SESSION["username"])){
 ?>
- <a href="login-form.php" class="w3-bar-item w3-button w3-padding-large">><?=$_SESSION["username"]?></a> 
+ <a href="php-action/logout.php" class="w3-bar-item w3-button w3-padding-large"><?=$_SESSION["username"]?></a> 
   
 <?php
 }

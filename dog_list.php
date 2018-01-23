@@ -35,10 +35,8 @@ img {
 <?php
 require_once('Navbar.php');
 require_once('dbconfig.php');
-session_start();
-$dogid = $_SESSION['cu_id'];
-$query = "SELECT * FROM dogs WHERE cu_id = '$dogid'";
-$result = mysqli_query($connect, $query);
+
+
 
 if(isset($_POST['submit']))
 {
@@ -70,6 +68,14 @@ if(isset($_POST['submit']))
 </div>
 <?php
 $i=0;
+
+if(isset($_SESSION['cu_id'])){
+
+
+  $dogid = $_SESSION['cu_id'];
+  $query = "SELECT * FROM dogs WHERE cu_id = '$dogid'";
+  $result = mysqli_query($connect, $query);  
+
  while ($row = mysqli_fetch_array($result)){
  if ($i%2==0) {?>
   <div class="w3-row-padding w3-padding-64 w3-container">
@@ -106,7 +112,9 @@ else {?>
 <?php
 $i++;
 }
+}
 ?>
+
 
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
