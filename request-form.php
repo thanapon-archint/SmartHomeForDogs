@@ -37,8 +37,8 @@
       <div class="col-75">
         <select id="country" name="dogcolor">
           <option value="White">White</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+          <option value="Black">Black</option>
+          <option value="Red">Red</option>
         </select>
       </div>
     </div>

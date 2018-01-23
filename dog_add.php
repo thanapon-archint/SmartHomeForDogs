@@ -45,6 +45,32 @@
         </select>
       </div>
     </div>
+        <div class="row">
+      <div class="col-25">
+        <label for="country">Dog colors</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="color">
+
+          <option value="White">White</option>
+          <option value="Black">Black</option>
+          <option value="Red">Red</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Dog age</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="age">
+
+          <option value="Puppy">Puppy</option>
+          <option value="Black">Black</option>
+          <option value="Red">Red</option>
+        </select>
+      </div>
+    </div>
     <div class="row">
       <div class="col-25">
         <label for="subject">Adress</label>

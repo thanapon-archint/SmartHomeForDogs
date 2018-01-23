@@ -11,12 +11,14 @@ if(isset($_POST['submit']))
 	$doginfo = $_POST['doginfo'];
 	$dogtype = $_POST['dogtype'];
 	$adress = $_POST['adress'];
+	$color = $_POST['color'];
+	$age = $_POST['age'];
 	$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 	echo $dogname;
 	echo $doginfo;
 	echo $dogtype;
 	echo $adress;
-	$query = "INSERT INTO dogs (dog_name, dog_info, dog_type, cu_id, dog_address, dog_image) VALUES ('$dogname', '$doginfo', '$dogtype', '$cu_id', '$adress', '{$image}')";
+	$query = "INSERT INTO dogs (dog_name, dog_info, dog_type, dog_color, dog_age, cu_id, dog_address, dog_image) VALUES ('$dogname', '$doginfo', '$dogtype', '$color', '$age', '$cu_id', '$adress', '{$image}')";
 	
 
 	 if ($connect->query($query) === TRUE) {
