@@ -39,9 +39,14 @@
       <div class="col-75">
         <select id="country" name="dogtype">
 
-          <option value="Retriever">Labrador Retriever</option>
-          <option value="German">German Shepherd</option>
-          <option value="Golden">Golden Retriever</option>
+          <option value="Labrador Retriever">Labrador Retriever</option>
+          <option value="German Shepherd">German Shepherd</option>
+          <option value="Golden Retriever">Golden Retriever</option>
+          <option value="Thai">Thai</option>
+          <option value="Bulldog">Bulldog</option>
+          <option value="Beagle">Beagle</option>
+          <option value="Poodle">Poodle</option>
+          <option value="Other">Other</option>
         </select>
       </div>
     </div>
@@ -55,6 +60,12 @@
           <option value="White">White</option>
           <option value="Black">Black</option>
           <option value="Red">Red</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Green">Green</option>
+          <option value="Brown">Brown</option>
+          <option value="Black-White">Black-White</option>
+          <option value="Other">Other</option>
+
         </select>
       </div>
     </div>
@@ -65,18 +76,19 @@
       <div class="col-75">
         <select id="country" name="age">
 
-          <option value="Puppy">Puppy</option>
-          <option value="Black">Black</option>
-          <option value="Red">Red</option>
+          <option value="Puppy">Puppyhood ends between six and 18 months of age.</option>
+          <option value="Small">Adolescence starts between six and 18 months of age.</option>
+          <option value="Medium">Adulthood starts between 12 months and three years of age.</option>
+          <option value="Large">The senior years begin between six and 10 years of age.</option>
         </select>
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="subject">Adress</label>
+        <label for="subject">Address (how to contact)</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="adress" placeholder="Write something.." style="height:200px" required></textarea>
+        <textarea id="subject" name="adress" placeholder="Please input your address phone number and your line ID " style="height:200px" required></textarea>
       </div>
     </div>
     <div class="row">
@@ -86,7 +98,7 @@
       <div class="col-75">
 
          <!--  <input type="file" name="file" accept="image/*" onchange="picChange(event)"/> -->
-          <label>File: </label><input type="file" name="image" />
+          <label>File: </label><input type="file" name="new_image" required>
       </div>
     </div>
     <div class="row">

@@ -37,7 +37,7 @@ require_once('Navbar.php');
 require_once('dbconfig.php');
 $d_id=$_GET['id'];/*get dog id*/
 
-$query = "SELECT * FROM dogs WHERE dog_id='$d_id'";
+$query = "SELECT * FROM dogs_vag WHERE dc_id='$d_id'";
 $result = mysqli_query($connect, $query);
 $row = mysqli_fetch_array($result);
 
@@ -48,39 +48,13 @@ $row = mysqli_fetch_array($result);
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
-  <h1 class="w3-center">Dog Detail</h1>
+  <h1 class="w3-center">Stray Dogs Detail</h1>
   <div class="w3-content">
     <div class="w3-twothird">
         
-      <h1><?=$row['dog_name']?></h1>
-     <p><?php echo "Details: ".$row['dog_info']?></p>
-              
-              <h6><?php echo "Dog Type: ".$row['dog_type']?></h6>
+         <h6><?php echo "Information: ".$row['dc_detail']?></h6>
 
-              <?php
-                if ($row['dog_age']=='Puppy') {
-                  $age = 'Puppyhood ends between six and 18 months of age.';
-                }
-                elseif ($row['dog_age']=='Small') {
-                  $age = 'Adolescence starts between six and 18 months of age.';
-                }
-                elseif ($row['dog_age']=='Medium') {
-                  $age = 'Adulthood starts between 12 months and three years of age.';
-                }
-                else
-                {
-                  $age = 'The senior years begin between six and 10 years of age.';
-                }
-              ?>
-
-
-              <h6><?php echo "Dog Age: ".$age?></h6>
-
-
-
-
-
-              <h6><?php echo "Address: ".$row['dog_address']?></h6>
+  
 
       <!-- <img src="Images/groupofdoggy.JPEG" width="700" height="200"> -->
     </div>
@@ -88,7 +62,7 @@ $row = mysqli_fetch_array($result);
     <div class="w3-third w3-center">
       <i class="w3-padding-64 w3-text-red w3-margin-center">
     
-        <img src='uploads/<?=$row["dog_image"]?>'>
+        <img src='uploads2/<?=$row["dc_image"]?>'>
       </i>
 
     </div>

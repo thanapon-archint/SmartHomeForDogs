@@ -17,7 +17,9 @@
   </div>
     <div class="row">
       <div class="col-25">
-        <label for="lname">Add location</label>
+        <label for="lname">Add location
+          <h6 ><font color="red">*required</font></h6>
+        </label>
       </div>
       <div class="col-75">
        
@@ -38,11 +40,12 @@ if(isset($_GET['lo1'])){
   echo "Longitude: $lo2";
 
 ?>
-    <input type="hidden" name="lo1" value="<?php echo $lo1;?>" />
-    <input type="hidden" name="lo2" value="<?php echo $lo2;?>" />
+    <input type="hidden" name="lo1" value="<?php echo $lo1;?>" required/>
+    <input type="hidden" name="lo2" value="<?php echo $lo2;?>" required/>
 <?php
 }
 ?>
+
     <div class="row">
       <br>
       <input type="submit" name="submit" value="ADD">

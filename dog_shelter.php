@@ -37,53 +37,24 @@ img {
 require_once('Navbar.php');
 require_once('dbconfig.php');
 
-
-
-if(isset($_POST['submit']))
-{
-  $lo1 = $_POST['lo1'];
-
-  $lo2 = $_POST['lo2'];
-
-
-  $q = "SELECT MAX(dog_id) as a FROM dogs";
-  $result1 = mysqli_query($connect, $q);
-  $rows = mysqli_fetch_array($result1);
-  $dog_id=$rows['a'];
-  
-  $qr = "UPDATE dogs set location_x = '$lo1', location_y = '$lo2' WHERE dog_id = '$dog_id'" ;
-  $connect->query($qr);
-}
 ?>
 
 <br>
 <br>
 <h1 class="w3-center w3-margin w3-jumbo">SMART HOME FOR DOGS</h1>
-<h1 class="w3-margin w3-center">Dogs List</h1>
+<h1 class="w3-margin w3-center">Shelter Dogs List</h1>
 
 <div class="w3-row-padding w3-padding-64 w3-center">
   <div class="w3-center">
-<?php
-if(isset($_SESSION["username"])){
-?>
-    <button class="w3-button w3-red w3-round-xlarge w3-padding-large" onclick="javascript:location.href='dog_add.php'">Add a new Dog</button>
-<?php
-}
-else{
-  echo "<h1 class='w3-center'>Please login first!<h1>";
-}
-?>
-
+      <h3>Shelter Detail: </h3>
   </div>
 </div>
 <?php
 $i=0;
 
-if(isset($_SESSION['cu_id'])){
 
-
-  $dogid = $_SESSION['cu_id'];
-  $query = "SELECT * FROM dogs WHERE cu_id = '$dogid'";
+  $shelter_id = $_GET['id'];
+  $query = "SELECT * FROM dog_shelter WHERE shelter_id = '$shelter_id'";
   $result = mysqli_query($connect, $query);  
 
  while ($row = mysqli_fetch_array($result)){
@@ -99,12 +70,33 @@ else {?>
 ?>
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1><?php echo $row["dog_name"]; ?></h1>
-      <h5 class="w3-padding-32"><?php echo $row["dog_info"]; ?></h5>
+      <h1><?=$row['dogs_name']?></h1>
+   
+              
+              <h6><?php echo "Dog Type: ".$row['dogs_type']?></h6>
 
-      <p class="w3-text-grey"><?php echo $row["dog_address"]; ?></p>
-      
-      <button class="button" onclick="javascript:location.href='php-action/deldog.php?id=<?=$row['dog_id']?>'" >Delete!</button>
+              <?php
+                if ($row['dogs_age']=='Puppy') {
+                  $age = 'Puppyhood ends between six and 18 months of age.';
+                }
+                elseif ($row['dogs_age']=='Small') {
+                  $age = 'Adolescence starts between six and 18 months of age.';
+                }
+                elseif ($row['dogs_age']=='Medium') {
+                  $age = 'Adulthood starts between 12 months and three years of age.';
+                }
+                else
+                {
+                  $age = 'The senior years begin between six and 10 years of age.';
+                }
+              ?>
+
+
+              <h6><?php echo "Dog Age: ".$age?></h6>
+
+             <h6><?php echo "Dog Type: ".$row['dogs_color']?></h6>
+
+    
       
     </div>
 
@@ -114,7 +106,7 @@ else {?>
         <!-- <img src="images/dog.png" width="200" height="200"> -->
         
               
-        <img src='uploads/<?=$row["dog_image"]?>' >
+        <img src='shelter/<?=$row["dogs_image"]?>' >
         
       </i>
     </div>
@@ -123,7 +115,7 @@ else {?>
 <?php
 $i++;
 }
-}
+
 ?>
 
           <?php

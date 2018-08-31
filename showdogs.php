@@ -12,14 +12,17 @@ if(isset($_POST['submit'])) {
   $q = "SELECT * from dogs WHERE dog_type = '$dogtype' AND dog_color = '$dogcolor' AND dog_age = '$dogage'";
   $result = mysqli_query($connect, $q);
 if (mysqli_num_rows($result) > 0){
-  while ($row = mysqli_fetch_array($result)){
+  
 ?>
     <div class="w3-content" style="max-width:1532px;">
       <div class="w3-row-padding w3-padding-16">
+<?php
+while ($row = mysqli_fetch_array($result)){
+  ?>
+
           <div class="w3-third w3-margin-bottom">
-                    <?php
-                     echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['dog_image'] ).'"/ width="420" height="300">';
-                    ?>
+                    <img src='uploads/<?=$row["dog_image"]?>'>
+
             <div class="w3-container w3-white">
               <h3><b><?php echo $row['dog_name']?></h3></b>
               <h6><?php echo "Address: ".$row['dog_address']?></h6>
@@ -33,17 +36,20 @@ if (mysqli_num_rows($result) > 0){
         
           
           </div>
-          
+<?php
+}
+
+?>          
         </div>
     </div>
+
 <?php
-  }
 }
 else{
   ?>
   <br>
   <br>
-  No dog found!!
+  <h1 class="w3-center">No dog found!!</h1>
   <?php
 }
 }  

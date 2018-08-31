@@ -3,11 +3,11 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 80%;
+        height: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
-        height: 80%;
+        height: 95%;
         margin: 0;
         padding: 0;
       }
@@ -21,6 +21,8 @@ require_once('dbconfig.php');
 
 $query = "SELECT * FROM dogs";
 $result = mysqli_query($connect, $query);
+$query2 = "SELECT * FROM dogs_vag";
+$result2 = mysqli_query($connect, $query2);
 $i=0;
 
 
@@ -68,16 +70,19 @@ $i=0;
             });
             // Icons for markers
             var icons = {
-			       url: "https://image.ibb.co/e6zzs6/DogIcon.png", // url
+			       url: "images/DogIcon.png", // url
 			       scaledSize: new google.maps.Size(50, 50), // scaled size
 			     };
+           var icons2 = {
+             url: "images/DogIcon2.png", // url
+             scaledSize: new google.maps.Size(50, 50), // scaled size
+           };
            var homeicons = {
-             url: "https://image.ibb.co/jr4KAR/Home.png", // url
+             url: "images/Home.png", // url
              scaledSize: new google.maps.Size(50, 50), // scaled size
            };
             // Sample marker
 <?php
-
 
  while($row = mysqli_fetch_array($result))
   {  
@@ -93,13 +98,30 @@ $i=0;
             });";
   }
 ?>
+
+<?php
+
+ while($row2 = mysqli_fetch_array($result2))
+  {  
+
+            echo 'var marker2 = new google.maps.Marker({position: {lat:'.$row2['dc_x'].', lng:'.$row2['dc_y'].'},
+            map: map,
+            icon:icons2,
+            url: "dogsvag_detail.php?id='.$row2['dc_id'].'"
+            });';
+
+            echo " google.maps.event.addListener(marker2, 'click', function() {
+                window.location.href = this.url;
+            });";
+  }
+?>
            
             
 
 
             // Marker for Animal Shelter
             var hmarker = new google.maps.Marker({
-            position: {lat:14.2123158585, lng:101.23579999999},
+            position: {lat:14.015359, lng:100.680771},
             map: map,
             icon:homeicons
             });
@@ -107,21 +129,15 @@ $i=0;
             var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+            '<h2 id="firstHeading" class="firstHeading">ศูนย์พึ่งพิง คลองสิบสอง เทศบาลนครรังสิต</h2>'+
             '<div id="bodyContent">'+
-            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-            'sandstone rock formation in the southern part of the '+
-            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-            'south west of the nearest large town, Alice Springs; 450&#160;km '+
-            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-            'Aboriginal people of the area. It has many springs, waterholes, '+
-            'rock caves and ancient paintings. Uluru is listed as a World '+
-            'Heritage Site.</p>'+
-            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+            '<p><b>ทดสอบ</b>, เทศบาลบ้านรับเลี้ยงสุนัข.</p>'+
+            '<p>Attribution: ลองกดดู, <a href="http://www.rangsit.org/dog/part2.htm">'+
             'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-            '(last visited June 22, 2009).</p>'+
+            '<br><br>'+
+            '<a href= "dog_shelter.php?id=1">'+
+            ' <button class="w3-button w3-red w3-round-xlarge w3-padding-large" >View Dogs in this shelter</button>'+
+            '</a>'+
             '</div>'+
             '</div>';
 

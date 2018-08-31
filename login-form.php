@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
+
 <body>
 <?php
 require_once('dbconfig.php');
@@ -16,10 +17,32 @@ require_once('Navbar.php');
 
 if (isset($_POST['Register'])) {
     $username = $_POST['username'];
-    $password = $_POST['psw'];
+    $password1 = $_POST['psw'];
+    $password2 = $_POST['psw-repeat'];
+    if ($password1==$password2) {
+        $query = "SELECT * FROM user WHERE username = '$username'";
+        $result = mysqli_query($connect, $query);
+        $row = mysqli_fetch_array($result);
+        if (mysqli_num_rows($result) > 0) {
+          echo '<script language="javascript">';
+          echo 'alert("This username has been use!!")';
+          echo '</script>';
+        }
+        else {
+            echo '<script language="javascript">';
+            echo 'alert("Thank you, you have successfully Signed up!!")';
+            echo '</script>';
+           $querys = "INSERT INTO user (username, password) VALUES('$username', '$password1')";
+           $connect->query($querys);
+        }
+    }
+    else{
+      echo '<script language="javascript">';
+      echo 'alert("Your password and conform password are not match!!")';
+      echo '</script>';
+    }
 
-    $query = "INSERT INTO user (username, password) VALUES('$username', '$password')";
-    $connect->query($query);
+    
 //    if ($connect->query($query) === TRUE)
 //        echo "success";
 }
@@ -27,7 +50,7 @@ if (isset($_POST['Register'])) {
 <br>
 <br>
 <div class="container">
-  <h2>Stacked form</h2>
+  <h2>Login form</h2>
   <form action="php-action/login.php" method="POST">
     <div class="form-group">
       <label for="email">Username:</label>
@@ -86,6 +109,17 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
 </script>
 
 </body>

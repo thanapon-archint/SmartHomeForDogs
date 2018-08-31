@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<title>Smart home for dogs</title>
 <link rel="stylesheet" href="vendor/dog_edit.css">
 <head>
 
@@ -23,9 +24,14 @@
       </div>
       <div class="col-75">
         <select id="country" name="dogtype">
-          <option value="Retriever">Retriever</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+           <option value="Labrador Retriever">Labrador Retriever</option>
+          <option value="German Shepherd">German Shepherd</option>
+          <option value="Golden Retriever">Golden Retriever</option>
+          <option value="Thai">Thai</option>
+          <option value="Bulldog">Bulldog</option>
+          <option value="Beagle">Beagle</option>
+          <option value="Poodle">Poodle</option>
+          <option value="Other">Other</option>
         </select>
       </div>
     </div>
@@ -39,6 +45,11 @@
           <option value="White">White</option>
           <option value="Black">Black</option>
           <option value="Red">Red</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Green">Green</option>
+          <option value="Brown">Brown</option>
+          <option value="Black-White">Black-White</option>
+          <option value="Other">Other</option>
         </select>
       </div>
     </div>
@@ -49,9 +60,10 @@
       </div>
       <div class="col-75">
         <select id="country" name="dogage">
-          <option value="Puppy">Puppy</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+          <option value="Puppy">Puppyhood ends between six and 18 months of age.</option>
+          <option value="Small">Adolescence starts between six and 18 months of age.</option>
+          <option value="Medium">Adulthood starts between 12 months and three years of age.</option>
+          <option value="Large">The senior years begin between six and 10 years of age</option>
         </select>
       </div>
     </div>
